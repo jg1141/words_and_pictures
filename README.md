@@ -11,6 +11,8 @@ The pictures are grouped on *slides*.
 
 The words are separated into *blocks*.
 
+See [demo](http://jg1141.github.io/).
+
 ##JSON Format for Linking Pictures (img) to Words (text)
 
 Example input (test.json):
@@ -63,3 +65,11 @@ Don't have a Mac? Use a sound file editor to create .mp3 files with names follow
 - s1_0.mp3 for full audio of second slide
 - s1_1.mp3 for audio of first block of words on second slide
 - s1_2.mp3 for audio of second block of words on second slide
+
+
+##Playing with Cloned Repo
+
+> $ git clone https://github.com/jg1141/words_and_pictures.git
+> $ python -m SimpleHTTPServer
+
+Open your web browser to [http://localhost:8000/](http://localhost:8000/).
