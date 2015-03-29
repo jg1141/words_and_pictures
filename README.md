@@ -71,6 +71,7 @@ Don't have a Mac? Use a sound file editor to create .mp3 files with names follow
 
 ```
 $ git clone https://github.com/jg1141/words_and_pictures.git
+$ cd words_and_pictures
 $ python -m SimpleHTTPServer
 ```
 
