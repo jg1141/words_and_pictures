@@ -69,7 +69,9 @@ Don't have a Mac? Use a sound file editor to create .mp3 files with names follow
 
 ##Playing with Cloned Repo
 
-> $ git clone https://github.com/jg1141/words_and_pictures.git
-> $ python -m SimpleHTTPServer
+```
+$ git clone https://github.com/jg1141/words_and_pictures.git
+$ python -m SimpleHTTPServer
+```
 
 Open your web browser to [http://localhost:8000/](http://localhost:8000/).
