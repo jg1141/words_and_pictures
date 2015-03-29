@@ -56,7 +56,13 @@ On a Mac, use
 
 to use the *say* utility to create .mp3 files from the words and add the file names (with key of "audio") to each block. Output goes into *test_output.json*.
 
-Don't have a Mac? Use a sound file editor to create .mp3 files with names following the pattern of s + slide_block + .mp3:
+Don't have a Mac? Use
+
+> $ python json2mp3_google.py test_google.json
+
+to use the *Google Translate Text-to-Speech API* to create .mp3 files into the audio folder.
+
+Prefer your own voice? Use a sound file editor to create .mp3 files with names following the pattern of s + slide_block + .mp3:
 
 - s0_0.mp3 for full audio of first slide
 - s0_1.mp3 for audio of first block of words on first slide

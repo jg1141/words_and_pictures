@@ -3,11 +3,13 @@
     "slide" : [
       {
         "img" : "Raining.jpg",
-        "text" : "First rain,"
+        "text" : "First rain,",
+        "language" : "en-ca"
       },
       {
         "img" : "Rainbow.jpg",
-        "text" : "then rainbow."
+        "text" : "then rainbow.",
+        "language" : "en-ca"
       }
     ]
   },
@@ -15,15 +17,18 @@
     "slide" : [
       {
         "img" : "Land.jpg",
-        "text" : "Sea"
+        "text" : "Sea",
+        "language" : "en-ca"
       },
       {
         "img" : "Clouds.jpg",
-        "text" : "and clouds"
+        "text" : "and clouds",
+        "language" : "en-ca"
       },
       {
         "img" : "Sunshine.jpg",
-        "text" : "make a sunny day."
+        "text" : "make a sunny day.",
+        "language" : "en-ca"
       }
     ]
   }

@@ -1,24 +1,21 @@
 import sys
 import json
 from subprocess import call
+import urllib
 import os
 
 class Slides():
 	""" Class for processing audio of slides extracted from JSON file"""
 
-	def write_audio(self, text_to_speak, on_slide, on_block):
-		"""Use Mac say command to create .m4a files and ffmpeg to convert them to .mp3"""
-		cmd = ["say", '\"' + text_to_speak + '\"', "-o", "s" + 
-		        str(on_slide) + "_" + str(on_block) + ".m4a", "--file-format=m4af"]
+	def write_audio(self, text_to_speak, language, on_slide, on_block):
+		"""Use Google Text-to-Speech to create .mp3 files"""
+		print "To .mp3: " + text_to_speak
+		q = urllib.urlencode({"q":text_to_speak.encode('utf-8')})
+		cmd = ["wget", "-q", "-U", "Mozilla", 
+		       'http://www.translate.google.com/translate_tts?ie=UTF-8&tl=' + language + '&' + q, 
+		       "-O", "audio/s" + str(on_slide) + "_" + str(on_block) + ".mp3"]
 		call(cmd)
-		output_file = "audio/s" + str(on_slide) + "_" + str(on_block) + ".mp3"
-		cmd = ["ffmpeg", "-y", "-i", "s" + 
-		        str(on_slide) + "_" + str(on_block) + ".m4a", output_file]
-		call(cmd)
-		cmd = ["rm", "s" + 
-		        str(on_slide) + "_" + str(on_block) + ".m4a"]
-		call(cmd)
-		return output_file
+		return "s" + str(on_slide) + "_" + str(on_block) + ".mp3"
 
 	def read_and_parse(self,file):
 		"""Makes calls to output an .mp3 file for each block and one for the full slide"""
@@ -34,9 +31,9 @@ class Slides():
 					text_to_speak += block['text'] + " "
 					on_block += 1
 					d[on_slide]['slide'][on_block-1]['audio'] = \
-					 self.write_audio(block['text'], on_slide, on_block)
+					 self.write_audio(block['text'], block['language'], on_slide, on_block)
 
-			d[on_slide]['audio'] = self.write_audio(text_to_speak, on_slide, 0)
+			d[on_slide]['audio'] = self.write_audio(text_to_speak, d[on_slide]['slide'][0]['language'], on_slide, 0)
 			with open('test_output.json', 'w') as outfile:
 			    json.dump(d, outfile)
 			on_slide += 1
@@ -46,7 +43,8 @@ class Slides():
 
 def main(argv):
 	if len(argv) < 2:
-		print "Usage: python json2mp3.py <json file>"
+		print "Usage: python json2mp3_google.py <json file>"
+		print "Notes: language must be specified for each block"
 		print "       .mp3 files output to audio folder"
 	else:
 		# Make sure audio folder exists
