@@ -1,5 +1,5 @@
 # words_and_pictures
-Python and Javascript to make and play talking pictures
+Python and Javascript to make and play talking pictures.
 
 Create simple, interactive reading lessons with words and pictures by creating three things:
 
@@ -11,7 +11,7 @@ The pictures are grouped on *slides*.
 
 The words are separated into *blocks*.
 
-See [demo](http://jg1141.github.io/).
+See [demo](http://jg1141.github.io/) with 6 slides in English, German and Chinese.
 
 ##JSON Format for Linking Pictures (img) to Words (text)
 
