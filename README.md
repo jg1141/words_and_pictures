@@ -9,58 +9,43 @@ Create simple, interactive reading lessons with words and pictures by creating t
 
 The pictures are grouped on *slides*.
 
-The words are separated into *blocks*.
+The words (or phonemes) are separated into *blocks*.
 
-See [demo](http://jg1141.github.io/) with 6 slides in English, German and Chinese.
+See [demo](http://jg1141.github.io/) with 6 slides, 2 each in English, German and Chinese.
 
 ##JSON Format for Linking Pictures (img) to Words (text)
 
 Example input (test.json):
 
 ```json
- [
-  {
-    "slide" : [
-      {
-        "img" : "Raining.jpg",
-        "text" : "First rain,"
-      },
-      {
-        "img" : "Rainbow.jpg",
-        "text" : "then rainbow."
-      }
-    ]
-  },
-  {
-    "slide" : [
-      {
-        "img" : "Land.jpg",
-        "text" : "Sea"
-      },
-      {
-        "img" : "Clouds.jpg",
-        "text" : "and clouds"
-      },
-      {
-        "img" : "Sunshine.jpg",
-        "text" : "make a sunny day."
-      }
-    ]
-  }
-]
+{
+  "block-type" : "words",
+  "language-default" : "en-uk",
+  "slides" : [
+    {
+      "slide" : [
+        {
+          "img" : "img1.png",
+          "text" : "This is a"
+        },
+        {
+          "img" : "img2.png",
+          "text" : "demo slide."
+        }
+      ]
+    }
+  ],
+  "tts-engine" : "google"
+}
 ```
 
-On a Mac, use 
+Use
 
 > $ python json2mp3.py test.json
 
-to use the *say* utility to create .mp3 files from the words and add the file names (with key of "audio") to each block. Output goes into *test_output.json*.
+to use the *Google Translate Text-to-Speech API* to create .mp3 files into the audio folder (subfolder ```<your json file name>```).
 
-Don't have a Mac? Use
-
-> $ python json2mp3_google.py test_google.json
-
-to use the *Google Translate Text-to-Speech API* to create .mp3 files into the audio folder.
+On a Mac, use ```"tts-engine" : "say"``` to use the *say* utility and *ffmpeg* to create .mp3 files from the words and add the file names (with key of "audio") to each block. Output goes into *test_output.json* or (```<your file name stem>_output.json```).
 
 Prefer your own voice? Use a sound file editor to create .mp3 files with names following the pattern of s + slide_block + .mp3:
 
@@ -74,6 +59,8 @@ Prefer your own voice? Use a sound file editor to create .mp3 files with names f
 
 
 ##Playing with Cloned Repo
+
+With Python 2:
 
 ```
 $ git clone https://github.com/jg1141/words_and_pictures.git

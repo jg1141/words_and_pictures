@@ -1,0 +1,35 @@
+{
+  "block-type" : "words",
+  "language-default" : "en-ca",
+  "slides" : [
+    {
+      "slide" : [
+        {
+          "img" : "Raining.jpg",
+          "text" : "First rain,"
+        },
+        {
+          "img" : "Rainbow.jpg",
+          "text" : "then rainbow."
+        }
+      ]
+    },
+    {
+      "slide" : [
+        {
+          "img" : "Land.jpg",
+          "text" : "Sea"
+        },
+        {
+          "img" : "Clouds.jpg",
+          "text" : "and clouds"
+        },
+        {
+          "img" : "Sunshine.jpg",
+          "text" : "make a sunny day."
+        }
+      ]
+    }
+  ],
+  "tts-engine" : "google"
+}

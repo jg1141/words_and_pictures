@@ -1,35 +1,19 @@
-[
-  {
-    "slide" : [
-      {
-        "img" : "Raining.jpg",
-        "text" : "First rain,",
-        "language" : "en-ca"
-      },
-      {
-        "img" : "Rainbow.jpg",
-        "text" : "then rainbow.",
-        "language" : "en-ca"
-      }
-    ]
-  },
-  {
-    "slide" : [
-      {
-        "img" : "Land.jpg",
-        "text" : "Sea",
-        "language" : "en-ca"
-      },
-      {
-        "img" : "Clouds.jpg",
-        "text" : "and clouds",
-        "language" : "en-ca"
-      },
-      {
-        "img" : "Sunshine.jpg",
-        "text" : "make a sunny day.",
-        "language" : "en-ca"
-      }
-    ]
-  }
-]
+{
+  "block-type" : "words",
+  "language-default" : "en-uk",
+  "slides" : [
+    {
+      "slide" : [
+        {
+          "img" : "img1.png",
+          "text" : "This is a"
+        },
+        {
+          "img" : "img2.png",
+          "text" : "demo slide."
+        }
+      ]
+    }
+  ],
+  "tts-engine" : "google"
+}
